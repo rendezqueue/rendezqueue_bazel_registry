@@ -2,3 +2,5 @@ module(
     name = "google_benchmark",
     version = "1.6.1",
 )
+
+bazel_dep(name = "platforms", version = "0.0.4")

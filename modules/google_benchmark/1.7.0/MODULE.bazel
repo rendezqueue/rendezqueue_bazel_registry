@@ -1,6 +1,6 @@
 module(
     name = "google_benchmark",
-    version = "1.6.1",
+    version = "1.7.0",
 )
 
 bazel_dep(name = "platforms", version = "0.0.4")

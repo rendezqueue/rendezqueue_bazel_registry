@@ -1,0 +1,5 @@
+module(
+    name = "bazel_clang_tidy",
+    version = "0.0.20221121",
+    compatibility_level = 1,
+)

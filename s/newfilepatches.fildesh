@@ -1,0 +1,8 @@
+#!/usr/bin/env fildesh
+
+(: version Str .self.opt.version)
+
+|< find -type f,l -printf '%P\n'
+|- sort
+|- xargs -n 1 -d "\n" ../../../s/newfilepatch.fildesh --version "${version}" -f
+|> stdout

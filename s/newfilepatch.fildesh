@@ -1,0 +1,21 @@
+#!/usr/bin/env fildesh
+
+(: version Str .self.opt.version)
+(: f Str .self.opt.f)
+
+|< cat "${f}"
+|> wc -l $(O linecount)
+
+|< zec / "${f}.patch" /
+|- sed -E -e "s:/:_:g"
+|- elastic - $(OF dstbasename)
+|> zec -o $(OF dstfilepath) / "../${version}/patches/" / -
+
+|< zec -paste / "+" / "${f}"
+|- zec / "--- /dev/null\n+++ ${f}\n@@ -0,0 +1," $(XA linecount) " @@\n" / -
+|- tee $(XA dstfilepath)
+|- openssl dgst -sha256 -binary
+|- openssl base64 -A
+|- zec / "    \"" $(XA dstbasename) "\": \"sha256-" / -
+|- zec - / "\"" ",\n" /
+|> stdout

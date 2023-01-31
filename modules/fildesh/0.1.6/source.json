@@ -1,5 +1,5 @@
 {
-  "url": "https://github.com/fildesh/fildesh/archive/refs/tags/v0.1.6.tar.gz",
+  "url": "https://github.com/fildesh/fildesh/releases/download/v0.1.6/fildesh-0.1.6.tar.gz",
   "integrity": "sha256-ChdtZ0SZKAbmN2Bi31pW7lXCvGZr6AekFMW/EPLrpdE=",
   "strip_prefix": "fildesh-0.1.6"
 }
